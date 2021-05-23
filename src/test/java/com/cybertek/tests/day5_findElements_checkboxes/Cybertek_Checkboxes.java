@@ -1,6 +1,6 @@
 package com.cybertek.tests.day5_findElements_checkboxes;
 
-import com.cybertek.utilities.WebDriverFactory;
+import com.cybertek.utilities.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,6 +21,6 @@ public class Cybertek_Checkboxes {
         WebElement checkBox1 = driver.findElement(By.xpath("//input[@type='checkbox']"));
         System.out.println(checkBox1.isSelected());
 
-        WebElement checkBox2 = driver.findElement(By.xpath(""));
+
     }
 }

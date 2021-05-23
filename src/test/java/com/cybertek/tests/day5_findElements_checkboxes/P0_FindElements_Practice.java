@@ -1,6 +1,6 @@
 package com.cybertek.tests.day5_findElements_checkboxes;
 
-import com.cybertek.utilities.WebDriverFactory;
+import com.cybertek.utilities.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
