@@ -16,7 +16,7 @@ public class AlertsPractices {
     WebDriver driver;
 
     @BeforeMethod
-    public void setupMethod(){
+    public void setupMethod() {
 
         // 1. Open browser
         // 2. Go to website: http://practice.cybertekschool.com/javascript_alerts
@@ -27,7 +27,7 @@ public class AlertsPractices {
     }
 
     @Test
-    public void information_alert_test(){
+    public void information_alert_test() {
         // Locating the button for alert to click
         WebElement informationAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Alert']"));
 
