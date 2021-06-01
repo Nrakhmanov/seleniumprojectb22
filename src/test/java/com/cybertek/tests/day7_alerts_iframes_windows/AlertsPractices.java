@@ -51,6 +51,8 @@ public class AlertsPractices {
 
         Assert.assertEquals(actualText, expectedText, "Actual text is not as expected"); // if yes, then it compares if texts are similar
     }
+
+
 }
 
 
