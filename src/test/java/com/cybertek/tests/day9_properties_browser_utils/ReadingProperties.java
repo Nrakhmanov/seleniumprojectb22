@@ -1,5 +1,6 @@
 package com.cybertek.tests.day9_properties_browser_utils;
 
+import com.cybertek.utilities.ConfigurationReader;
 import org.testng.annotations.Test;
 
 import java.io.FileInputStream;
@@ -28,5 +29,12 @@ public class ReadingProperties {
 
         System.out.println("properties.getProperty(\"env\") = " + properties.getProperty("env"));
 
+    }
+
+    @Test
+    public void using_properties_method() {
+
+        System.out.println("ConfigurationReader.getProperty(\"browser\") = " + ConfigurationReader.getProperty("browser"));
+        System.out.println("ConfigurationReader.getProperty(\"env\") = " + ConfigurationReader.getProperty("env"));
     }
 }
