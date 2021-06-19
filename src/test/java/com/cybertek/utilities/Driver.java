@@ -13,17 +13,20 @@ public class Driver {
     Creating the private constructor so this class' object
     is not reachable from outside
      */
-    private Driver(){}
+    private Driver() {
+    }
+
     /*
     Making our 'driver' instance private so that it is not reachable from outside of the class.
     We make it static, because we want it to run before everything else, and also we will use it in a static method
      */
     private static WebDriver driver;
+
     /*
     Creating re-usable utility method that will return same 'driver' instance everytime we call it.
      */
-    public static WebDriver getDriver(){
-        if (driver == null){
+    public static WebDriver getDriver() {
+        if (driver == null) {
             /*
             We read our browser type from configuration.properties file using
             .getProperty method we creating in ConfigurationReader class.
@@ -33,7 +36,7 @@ public class Driver {
             Depending on the browser type our switch statement will determine
             to open specific type of browser/driver
              */
-            switch (browserType){
+            switch (browserType) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
@@ -54,4 +57,17 @@ public class Driver {
         Same driver instance will be returned every time we call Driver.getDriver(); method
          */
         return driver;
+    }
+
+    /*
+    This method makes sure we have some form of driver session or driver id has.
+    either null or not null it must exist.
+     */
+
+    public static void closeDriver() {
+        if(driver != null) {
+            driver.quit();
+            driver = null;
+        }
+    }
 }

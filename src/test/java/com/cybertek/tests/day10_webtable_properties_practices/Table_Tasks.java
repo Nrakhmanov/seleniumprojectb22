@@ -21,16 +21,18 @@ public class Table_Tasks {
 
         String browser = ConfigurationReader.getProperty("browser");
 
-        String url = ConfigurationReader.getProperty("dataTablesUrl");
+
 
         driver = WebDriverFactory.getDriver(browser);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get(url);
+
     }
 
     @Test
     public void task3_return_tims_due_amount() {
+        String url = ConfigurationReader.getProperty("dataTablesUrl");
+        driver.get(url);
 
      //   driver.findElement(By.xpath("//table[@id='table1']//td[.='Tim']/../td[4]"));// first way of locating element
      //   driver.findElement(By.xpath("//table[@id='table1']//td[.='Tim']/following-sibling::td[2]")); // second way of locating same element
