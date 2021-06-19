@@ -1,33 +1,16 @@
 package com.cybertek.tests.day10_webtable_properties_practices;
 
+import com.cybertek.tests.base.TestBase;
 import com.cybertek.utilities.ConfigurationReader;
 import com.cybertek.utilities.TableUtils;
-import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
-
-public class Table_Tasks {
-
-    WebDriver driver;
-
-    @BeforeMethod
-    public void setupMethod() {
-
-        String browser = ConfigurationReader.getProperty("browser");
+public class Table_Tasks extends TestBase {
 
 
-
-        driver = WebDriverFactory.getDriver(browser);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-    }
 
     @Test
     public void task3_return_tims_due_amount() {
@@ -49,6 +32,8 @@ public class Table_Tasks {
 
     @Test
     public void task4_verify_order_method() {
+        String url = ConfigurationReader.getProperty("dataTablesUrl");
+        driver.get(url);
         TableUtils.verifyOrder(driver, "Tim" );
 
     }
